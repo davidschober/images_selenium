@@ -1,4 +1,4 @@
-def main(filetype, inputfile):
+def main(filetype, inputfile, wait):
 
     import selenium.webdriver as webdriver
     from selenium.common.exceptions import TimeoutException
@@ -24,7 +24,7 @@ def main(filetype, inputfile):
         try:
             browser.get(url)
             print "working on %s" %url
-            sleep(15)
+            sleep(int(wait))
         except TimeoutException:
             # something times outs, just move along
             pass
